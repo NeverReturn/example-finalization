@@ -32,7 +32,8 @@ public class PhantomResourceFactory {
 
         @Override
         public synchronized void dispose() {
-            handle = null;
+            handle.clear();
+        	handle = null;
             super.dispose();
             GLOBAL_RESOURCES.remove(this);
         }
